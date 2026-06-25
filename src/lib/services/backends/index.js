@@ -2,6 +2,7 @@ import { derived, writable } from 'svelte/store';
 
 import local from '$lib/services/backends/fs/local';
 import test from '$lib/services/backends/fs/test';
+import cumbreLabs from '$lib/services/backends/git/cumbre-labs';
 import gitea from '$lib/services/backends/git/gitea';
 import github from '$lib/services/backends/git/github';
 import gitlab from '$lib/services/backends/git/gitlab';
@@ -20,6 +21,7 @@ import gitlab from '$lib/services/backends/git/gitlab';
  */
 export const allBackendServices = {
   github,
+  'cumbre-labs': cumbreLabs, // GitHub via the Cumbre Labs identity gateway (Google OAuth + bot)
   gitlab,
   gitea,
   local,
